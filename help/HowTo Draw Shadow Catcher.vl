@@ -613,7 +613,7 @@
           </Pad>
           <Pad Id="B18ey10dhvpQbQ729C43jX" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="959,828" />
           <Pad Id="RsKsAgxVXvfLKgNBVV2nh7" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="-103,-435" />
-          <Pad Id="SQ7QoLAybgQMdh1epl7DwF" Bounds="984,751,444,87" ShowValueBox="true" isIOBox="true" Value="1. Use this project's own SceneWindow with added Compositor output to get the data needed for render Shadow Catcher and store it to the Pad.">
+          <Pad Id="SQ7QoLAybgQMdh1epl7DwF" Bounds="984,751,447,114" ShowValueBox="true" isIOBox="true" Value="1. Use this project's own SceneWindow (or yours!) with added Compositor output to get the data needed for render Shadow Catcher and store it to the Pad.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -910,37 +910,6 @@
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
           </Pad>
-          <Node Bounds="919,705,285,19" Id="E56BRjUZB7ePHQntCGYP6s">
-            <p:NodeReference LastCategoryFullName="Stride.Cameras" LastDependency="VL.Stride.vl">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <Choice Kind="ProcessAppFlag" Name="OrbitCamera" />
-            </p:NodeReference>
-            <Pin Id="BBeo6YUs02DLGyPPYTr9f7" Name="Components" Kind="InputPin" />
-            <Pin Id="RuAyu9xguXMP4eMrOUxafW" Name="Children" Kind="InputPin" />
-            <Pin Id="VMB2w6U57hoOvr3DtAeGbg" Name="Initial Interest" Kind="InputPin" />
-            <Pin Id="IipIVJHOhXWMOG985YnWAC" Name="Initial Yaw" Kind="InputPin" />
-            <Pin Id="Idv1DRd4FUtPG4k97hDzCU" Name="Initial Pitch" Kind="InputPin" />
-            <Pin Id="SIhJYkpaAjJLOaI9gDSEYb" Name="Initial Distance" Kind="InputPin" />
-            <Pin Id="BP2tdAsH96EM1YvRKX1Hg7" Name="Initial Vertical Field Of View" Kind="InputPin" />
-            <Pin Id="NnI5ECYLlJcPC2Y1CvbPQw" Name="Projection" Kind="InputPin" />
-            <Pin Id="EZD5oZ72qqNOE6lFS5kIRB" Name="Near Clip Plane" Kind="InputPin" />
-            <Pin Id="DhCuxWerW1QPwL4HhoV4YT" Name="Far Clip Plane" Kind="InputPin" />
-            <Pin Id="GiwQ4Eo5EdAL4vyBqe2DZs" Name="Aspect Ratio" Kind="InputPin" />
-            <Pin Id="UhNFFGUuaxrPhJdON8tyi0" Name="Use Custom Aspect Ratio" Kind="InputPin" />
-            <Pin Id="DWTNlDHmrc7QdAvacUcbfo" Name="Show Helper" Kind="InputPin" />
-            <Pin Id="HjjJJnEbXv8OdGXeLe5HbA" Name="Reset" Kind="InputPin" DefaultValue="False" />
-            <Pin Id="KfYSFD5Qh5BPFuBZqpDdgO" Name="Enabled" Kind="InputPin" />
-            <Pin Id="MGaYtkFEzjOQN5YqUfLgFb" Name="Output" Kind="OutputPin" />
-            <Pin Id="EWYK1IOP5HDOt4B1MD0RxK" Name="Position" Kind="OutputPin" />
-            <Pin Id="V47s6UX1yj7Ltjv0O2BW3o" Name="Frustum" Kind="OutputPin" />
-            <Pin Id="EKOtpLN6xyLMzbug3LatVB" Name="Inverse View" Kind="OutputPin" />
-            <Pin Id="MxNYD5Elj53LNgn6tY4IIM" Name="Camera Component" Kind="OutputPin" />
-          </Node>
-          <Pad Id="PqQQ1hYQc0hMFZi0qBm48s" Comment="Initial Vertical Field Of View" Bounds="1102,675,35,15" ShowValueBox="true" isIOBox="true" Value="0.08">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="Float32" />
-            </p:TypeAnnotation>
-          </Pad>
           <Pad Id="JnV6DG2SKeIPKMbwRsX2me" Comment="Speed" Bounds="1705,-184,35,15" ShowValueBox="true" isIOBox="true" Value="0.02">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
@@ -1041,8 +1010,6 @@
         <Link Id="NkgfrOoKxkbL9wpnOwco7W" Ids="SzHo29FGmPVQKlt5PaSUms,BDVYIhJAhJmNl1QeGf95xg" />
         <Link Id="PwHyfdi0fAnMQt3jThYS1f" Ids="LAQmbCYrppPLAeOagCp3q3,JGsK7SuplO9LAHpBQlaK9N" />
         <Link Id="UKSPb4nub8ONhENOkXBj4w" Ids="VON7P4TnA6GL40GjtviY6Z,J8pQFLWfIs4L05XczGH3oD" />
-        <Link Id="E60e5H6O6DaNa6Pe9lLtLY" Ids="MGaYtkFEzjOQN5YqUfLgFb,EOnh7I5nsQmLDLdytraRBl" />
-        <Link Id="ROzm0XCbPfoMycS4kA4Aq7" Ids="PqQQ1hYQc0hMFZi0qBm48s,BP2tdAsH96EM1YvRKX1Hg7" />
         <Link Id="ECQ2mU3H0uXMHdsKWhX9wE" Ids="MMC0lrjH9nHQMzkxFscg8x,RBKyp2z3Xk9M0LtCIoNupc" />
         <Link Id="Mn4SC7s95mwMuyrmCvvt85" Ids="K5eLDg1nIgRNUnMXW8ttg9,SzgyG4cPbInO0O5h0yYLZG" />
         <Link Id="DyVM6Bct5TTMkvnU6aSNHT" Ids="Tkk8BL0XxElOe65hx2AMIM,ThIBJkHxQ5OPwnTTjcuEHP" />
