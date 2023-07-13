@@ -36,17 +36,14 @@ shader ShadowCatcherCommon : Texturing, BufferUtils, PositionStream4, NormalStre
         return 2.0f * ShadowMapTextureTexelSize.x * offsetScale * normalOffsetScale * normal;
     }
 
-    float ComputeShadowFromCascade(float3 shadowPositionWS, float depthBias, float4x4 worldToShadowCascadeUV)
+    float ComputeShadowFromCascade(float3 shadowPositionWS, float depthBias, float4x4 worldToShadowCascadeUV, int filterSize)
     {
         float4 shadowPosition = mul(float4(shadowPositionWS, 1.0), worldToShadowCascadeUV);
         shadowPosition.z -= depthBias;
         shadowPosition.xyz /= shadowPosition.w;
 
-        return FilterShadow(shadowPosition.xy, shadowPosition.z);
+        return FilterShadow(shadowPosition.xy, shadowPosition.z, filterSize);
     }
 
-    float FilterShadow(float2 position, float positionDepth)
-    {
-        return ShadowMapTexture.SampleCmpLevelZero(LinearClampCompareLessEqualSampler, position, positionDepth);
-    }
+    abstract float FilterShadow(float2 position, float positionDepth, int filterSize);
 };

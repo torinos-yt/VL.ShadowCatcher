@@ -1,7 +1,7 @@
 ﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
-shader ShadowCatcherDirectional : ShadowCatcherCommon, Transformation
+shader ShadowCatcherDirectional : ShadowCatcherFilterBase, Transformation
 {
     rgroup PerLighting
     {
@@ -31,7 +31,7 @@ shader ShadowCatcherDirectional : ShadowCatcherCommon, Transformation
         // If we are within the cascades
         if (cascadeIndex < CascadeCount)
         {
-            shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex], WorldToShadowCascadeUV[cascadeIndexBase+cascadeIndex].Matrix);
+            shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex], WorldToShadowCascadeUV[cascadeIndexBase+cascadeIndex].Matrix, FilterSize[lightIndex]);
 
             float nextSplit = CascadeDepthSplits[cascadeIndexBase + cascadeIndex].y;
             float splitSize = nextSplit;

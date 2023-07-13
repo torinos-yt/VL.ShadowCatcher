@@ -1,7 +1,7 @@
 ﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
-shader ShadowCatcherPointCubeMap : ShadowCatcherCommon
+shader ShadowCatcherPointCubeMap : ShadowCatcherFilterBase
 {
     rgroup PerLighting
     {
@@ -66,7 +66,7 @@ shader ShadowCatcherPointCubeMap : ShadowCatcherCommon
             return 1;
 
         // Compare distance to light to value inside of the shadow map
-        float shadow = FilterShadow(projectedPosition.xy, depth);
+        float shadow = FilterShadow(projectedPosition.xy, depth, FilterSize[DirectionalCount + SpotLightCount + lightIndex]);
 
         float3 lightVector = lightPosition - positionWS;
         float lightVectorLength = length(lightVector);

@@ -1,7 +1,7 @@
 ﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
 
-shader ShadowCatcherSpot : ShadowCatcherCommon
+shader ShadowCatcherSpot : ShadowCatcherFilterBase
 {
     rgroup PerLighting
     {
@@ -14,7 +14,7 @@ shader ShadowCatcherSpot : ShadowCatcherCommon
         float3 shadowPosition = position.xyz;
         shadowPosition += GetShadowPositionOffset(OffsetScales[lightIndex+DirectionalCount], 0, streams.normalWS);
 
-        float3 shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex+DirectionalCount], WorldToShadowCascadeUV[lightIndex+DirectionalCount*CascadeCount].Matrix);
+        float3 shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex+DirectionalCount], WorldToShadowCascadeUV[lightIndex+DirectionalCount*CascadeCount].Matrix, FilterSize[DirectionalCount + lightIndex]);
         
         float3 lightVectorNorm = (float3)0;
         float atten = ComputeAttenuation(position,
@@ -22,6 +22,8 @@ shader ShadowCatcherSpot : ShadowCatcherCommon
                                         -SpotDirections[lightIndex],
                                         LightPositions[lightIndex],
                                         lightVectorNorm);
+
+        if(dot(lightVectorNorm, SpotDirections[lightIndex]) < 0.01) shadow = 1;
 
         if(LightAttenuation)
             return shadow * saturate((atten*25));
