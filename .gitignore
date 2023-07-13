@@ -1,0 +1,24 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# unused bynary
+Stride*.dll
+VL.Core*.dll
+*.deps.json
+*.pdb
+src/lib
+
+# VVVV
+.vl/

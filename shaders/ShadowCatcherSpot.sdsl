@@ -1,0 +1,30 @@
+﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+shader ShadowCatcherSpot : ShadowCatcherCommon
+{
+    rgroup PerLighting
+    {
+        StructuredBuffer<float3> SpotParams; // AngleOffsetAndInvSquareRadius
+        StructuredBuffer<float3> SpotPositions;
+        StructuredBuffer<float3> SpotDirections;
+    }
+
+    float3 ComputeSpotShadow(float3 position, int lightIndex)
+    {
+        // Offset the shadow position
+        float3 shadowPosition = position.xyz;
+        shadowPosition += GetShadowPositionOffset(OffsetScales[lightIndex+DirectionalCount], 0, streams.normalWS);
+
+        float3 shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex+DirectionalCount], WorldToShadowCascadeUV[lightIndex+DirectionalCount*CascadeCount].Matrix);
+        
+        float3 lightVectorNorm = (float3)0;
+        float atten = ComputeAttenuation(position,
+                                        SpotParams[lightIndex],
+                                        -SpotDirections[lightIndex],
+                                        SpotPositions[lightIndex],
+                                        lightVectorNorm);
+
+        return shadow * saturate((atten*25));
+    }
+};

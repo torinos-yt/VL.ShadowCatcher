@@ -1,0 +1,45 @@
+﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+shader ShadowCatcherCommon : Texturing, BufferUtils, PositionStream4, NormalStream, LightSpotAttenuationDefault
+{
+    rgroup PerLighting
+    {
+        stage Texture2D ShadowMapTexture;
+
+        StructuredBuffer<float4x4Struct> WorldToShadowCascadeUV;
+        StructuredBuffer<float> DepthBiases;
+        StructuredBuffer<float> OffsetScales;
+    }
+
+    cbuffer PerLighting
+    {
+        float2 ShadowMapTextureSize;
+        float2 ShadowMapTextureTexelSize;
+
+        int DirectionalCount;
+        int SpotLightCount;
+
+        int CascadeCount = 4;
+    }
+
+    float3 GetShadowPositionOffset(float offsetScale, float nDotL, float3 normal)
+    {
+        float normalOffsetScale = saturate(1.0f - nDotL);
+        return 2.0f * ShadowMapTextureTexelSize.x * offsetScale * normalOffsetScale * normal;
+    }
+
+    float ComputeShadowFromCascade(float3 shadowPositionWS, float depthBias, float4x4 worldToShadowCascadeUV)
+    {
+        float4 shadowPosition = mul(float4(shadowPositionWS, 1.0), worldToShadowCascadeUV);
+        shadowPosition.z -= depthBias;
+        shadowPosition.xyz /= shadowPosition.w;
+
+        return FilterShadow(shadowPosition.xy, shadowPosition.z);
+    }
+
+    float FilterShadow(float2 position, float positionDepth)
+    {
+        return ShadowMapTexture.SampleCmpLevelZero(LinearClampCompareLessEqualSampler, position, positionDepth);
+    }
+};

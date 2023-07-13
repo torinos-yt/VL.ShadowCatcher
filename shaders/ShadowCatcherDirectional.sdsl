@@ -1,0 +1,57 @@
+﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+shader ShadowCatcherDirectional : ShadowCatcherCommon, Transformation
+{
+    rgroup PerLighting
+    {
+        StructuredBuffer<float2> CascadeDepthSplits;
+    }
+
+    float3 ComputeDirectionalShadow(float3 position, int lightIndex)
+    {
+        int cascadeIndexBase = lightIndex * CascadeCount;
+
+        // Only support a single light per group
+        int cascadeIndex = 0;
+
+        for(int i = 0; i < CascadeCount - 1; i++)
+        {
+            if (streams.DepthVS > CascadeDepthSplits[cascadeIndexBase + i].y * .45)
+            {
+                cascadeIndex = i + 1;
+            }
+        }
+        float3 shadow = 1.0;
+
+        // Offset the shadow position
+        float3 shadowPosition = position.xyz;
+        shadowPosition += GetShadowPositionOffset(OffsetScales[lightIndex], 0, streams.normalWS);
+
+        // If we are within the cascades
+        if (cascadeIndex < CascadeCount)
+        {
+            shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex], WorldToShadowCascadeUV[cascadeIndexBase+cascadeIndex].Matrix);
+
+            float nextSplit = CascadeDepthSplits[cascadeIndexBase + cascadeIndex].y;
+            float splitSize = nextSplit;
+            if(cascadeIndex > 0)
+            {
+                splitSize = nextSplit - CascadeDepthSplits[cascadeIndexBase + cascadeIndex - 1].y;
+            }
+            float splitDist = (nextSplit - streams.DepthVS) / splitSize;
+
+            if (splitDist < 0.2)
+            {
+                float lerpAmt = smoothstep(0.0, 0.2, splitDist);
+            
+                if (cascadeIndex == CascadeCount - 1)
+                {
+                    shadow = lerp(1.0f, shadow, lerpAmt);
+                }
+            }
+        }
+
+        return shadow;
+    }
+};

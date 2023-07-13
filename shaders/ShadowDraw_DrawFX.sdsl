@@ -1,0 +1,34 @@
+﻿shader ShadowDraw_DrawFX : VS_PS_Base, ShadowCatcherDirectional, ShadowCatcherSpot
+{
+    [Color]
+    stage float4 ColorInput = float4(0, 0, 0, 1);
+
+    override stage void VSMain()
+    {
+        streams.PositionWS = mul(streams.Position, World);
+        streams.normalWS = mul(streams.meshNormal, (float3x3)WorldInverseTranspose);
+        streams.ShadingPosition = mul(streams.Position, WorldViewProjection);
+    }
+
+    override stage void PSMain()
+    {
+        streams.DepthVS = -mul(streams.PositionWS, View).z;
+
+        float shadow = 1;
+
+        for(int i = 0; i < SpotLightCount; i++)
+        {
+            shadow *= ComputeSpotShadow(streams.PositionWS.xyz, i).x;
+        }
+
+        for(int j = 0; j < DirectionalCount; j++)
+        {
+            shadow *= ComputeDirectionalShadow(streams.PositionWS.xyz, j).x;
+        }
+
+        float4 c = (1-shadow).xxxx * ColorInput;
+
+        streams.ColorTarget = c;
+    }
+
+};
