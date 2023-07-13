@@ -57,7 +57,7 @@ shader ShadowCatcherPointCubeMap : ShadowCatcherFilterBase
 
         // Apply bias in view space
         lightSpaceZ = abs(lightSpaceZ);
-        lightSpaceZ -= DepthBiases[indexBase + lightIndex];
+        lightSpaceZ -= DepthBiases[DirectionalCount + SpotLightCount + lightIndex];
 
         // Project view space depth into the same space as the shadow map
         float depth = DepthParameters[lightIndex].x + (DepthParameters[lightIndex].y / lightSpaceZ);
