@@ -49,7 +49,7 @@ shader ShadowCatcherPointCubeMap : ShadowCatcherFilterBase
         int indexBase = DirectionalCount * CascadeCount + SpotLightCount;
 
         // Apply normal scaled bias
-        positionWS += GetShadowPositionOffset(OffsetScales[indexBase + lightIndex], 0, streams.normalWS);
+        positionWS += GetShadowPositionOffset(OffsetScales[DirectionalCount + SpotLightCount + lightIndex], 0, streams.normalWS);
 
         // Map to texture space
         float4 projectedPosition = mul(float4(positionWS,1), WorldToShadowCascadeUV[indexBase + cascadeIndex].Matrix);
