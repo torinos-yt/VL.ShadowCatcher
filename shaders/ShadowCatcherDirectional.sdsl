@@ -5,7 +5,7 @@ shader ShadowCatcherDirectional : ShadowCatcherFilterBase, Transformation
 {
     rgroup PerLighting
     {
-        StructuredBuffer<float2> CascadeDepthSplits;
+        StructuredBuffer<float> CascadeDepthSplits;
     }
 
     float3 ComputeDirectionalShadow(float3 position, int lightIndex)
@@ -17,12 +17,14 @@ shader ShadowCatcherDirectional : ShadowCatcherFilterBase, Transformation
 
         for(int i = 0; i < CascadeCount - 1; i++)
         {
-            if (streams.DepthVS > CascadeDepthSplits[cascadeIndexBase + i].y * .45)
+            [flatten]
+            if (streams.DepthVS > CascadeDepthSplits[cascadeIndexBase + i])
             {
                 cascadeIndex = i + 1;
             }
         }
-        float3 shadow = 1.0;
+
+        float3 shadow = 1;
 
         // Offset the shadow position
         float3 shadowPosition = position.xyz;
@@ -33,23 +35,21 @@ shader ShadowCatcherDirectional : ShadowCatcherFilterBase, Transformation
         {
             shadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex], WorldToShadowCascadeUV[cascadeIndexBase+cascadeIndex].Matrix, FilterSize[lightIndex]);
 
-            float nextSplit = CascadeDepthSplits[cascadeIndexBase + cascadeIndex].y;
-            float splitSize = nextSplit;
-            if(cascadeIndex > 0)
-            {
-                splitSize = nextSplit - CascadeDepthSplits[cascadeIndexBase + cascadeIndex - 1].y;
-            }
-            float splitDist = (nextSplit - streams.DepthVS) / splitSize;
+            // float nextSplit = CascadeDepthSplits[cascadeIndexBase + cascadeIndex];
+            // float splitSize = nextSplit;
+            // if(cascadeIndex > 0)
+            // {
+            //     splitSize = nextSplit - CascadeDepthSplits[cascadeIndexBase + cascadeIndex - 1];
+            // }
+            // float splitDist = (nextSplit - streams.DepthVS) / splitSize;
 
-            if (splitDist < 0.2)
-            {
-                float lerpAmt = smoothstep(0.0, 0.2, splitDist);
+            // if (splitDist < 0.2)
+            // {
+            //     float lerpAmt = smoothstep(0.0, 0.2, splitDist);
             
-                if (cascadeIndex == CascadeCount - 1)
-                {
-                    shadow = lerp(1.0f, shadow, lerpAmt);
-                }
-            }
+            //     float nextShadow = ComputeShadowFromCascade(shadowPosition, DepthBiases[lightIndex], WorldToShadowCascadeUV[cascadeIndexBase+cascadeIndex+1].Matrix, FilterSize[lightIndex]);
+            //     shadow = lerp(nextShadow, shadow, lerpAmt);
+            // }
         }
 
         return shadow;

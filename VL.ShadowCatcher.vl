@@ -1332,7 +1332,7 @@
                 <Choice Kind="TypeFlag" Name="Integer32" />
               </p:TypeAnnotation>
             </Pad>
-            <Node Bounds="270,1887,314,278" Id="UcRPOrKCfGvNVaKqaHCARJ">
+            <Node Bounds="263,1887,321,278" Id="UcRPOrKCfGvNVaKqaHCARJ">
               <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                 <CategoryReference Kind="Category" Name="Primitive" />
@@ -1353,7 +1353,7 @@
                   <Pin Id="Kbt2Q8t4cqfN5AkxBfstRn" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="CDXsDhmgjf4PQMYdAtZw6z" Name="Depth Bias" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="319,1998,139,26" Id="P0d1q7IU6tANndWoSj63jI">
+                <Node Bounds="320,2007,139,26" Id="P0d1q7IU6tANndWoSj63jI">
                   <p:NodeReference LastCategoryFullName="Stride.Rendering.Shadows.LightDirectionalShadowMapRenderer.ShaderData" LastDependency="Stride.Rendering.dll">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="AssemblyCategory" Name="ShaderData" />
@@ -1372,16 +1372,6 @@
                   <Pin Id="Q6f4Aj5SQJ2LagU8jdz6CI" Name="Input" Kind="StateInputPin" />
                   <Pin Id="H7R5ETG7l1wLgWtD3MvCjB" Name="Output" Kind="StateOutputPin" />
                   <Pin Id="Nw0BZ0FaayEO8VYHyaF9kI" Name="Offset Scale" Kind="OutputPin" />
-                </Node>
-                <Node Bounds="282,2055,72,26" Id="JaZQ6pWzqOMP6LhtVbaEk1">
-                  <p:NodeReference LastCategoryFullName="Stride.Rendering.Shadows.LightDirectionalShadowMapRenderer.ShaderData" LastDependency="Stride.Rendering.dll">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="AssemblyCategory" Name="ShaderData" />
-                    <Choice Kind="OperationCallFlag" Name="DepthRange" />
-                  </p:NodeReference>
-                  <Pin Id="HdGsJcaJEMzOWO9HTGBTZ2" Name="Input" Kind="StateInputPin" />
-                  <Pin Id="KUAeKANUncsLBsM3rkWWUC" Name="Output" Kind="StateOutputPin" />
-                  <Pin Id="AKLeymbU00PQTxTtoar7XG" Name="Depth Range" Kind="OutputPin" />
                 </Node>
                 <Node Bounds="386,2066,63,26" Id="Ou9iiidqdMlQb4842dRHWJ">
                   <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
@@ -1422,6 +1412,16 @@
                   <Pin Id="SRyw21e6tbgLWcvndmEGC0" Name="Input" Kind="StateInputPin" />
                   <Pin Id="HUlG8C5GY41NZQYXnrwq7z" Name="Item" Kind="InputPin" />
                   <Pin Id="EFMG0uG8BreQJydJZNgNYM" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="275,2057,78,26" Id="AasU2Fva2J6N52upo4Wakp">
+                  <p:NodeReference LastCategoryFullName="Stride.Rendering.Shadows.LightDirectionalShadowMapRenderer.ShaderData" LastDependency="Stride.Rendering.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="ShaderData" />
+                    <Choice Kind="OperationCallFlag" Name="CascadeSplits" />
+                  </p:NodeReference>
+                  <Pin Id="IxTkhy30MywO0EYmy3Ys1g" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="FuTPlSOw73nPCtI2DQWxQz" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="EU3346LPwhVO8tvs0R2zSi" Name="Cascade Splits" Kind="OutputPin" />
                 </Node>
               </Patch>
               <ControlPoint Id="PYzbslezMMLN4RcIr74Qyb" Bounds="479,1893" Alignment="Top" />
@@ -1786,7 +1786,6 @@
           <Link Id="JbcIwjEF5HBLnisuKcsVAN" Ids="Kbt2Q8t4cqfN5AkxBfstRn,HrWO5lH8ApmLIez808Mze3" />
           <Link Id="SagF1jhsyi3OzPuVofHWDX" Ids="PYzbslezMMLN4RcIr74Qyb,Q6f4Aj5SQJ2LagU8jdz6CI" />
           <Link Id="ClKUtPgXAGoOvFsbsqBZkk" Ids="H7R5ETG7l1wLgWtD3MvCjB,QRzov8J4o0AMhOijvydlz6" />
-          <Link Id="ErllF8BfvdwObRKTTgSQLb" Ids="BqIkiLYKOHSNrUeXUVCbDL,HdGsJcaJEMzOWO9HTGBTZ2" />
           <Link Id="C5Ffy7s9xIfOZtjE3bY1HJ" Ids="E3XInlp16igLaCXpulwUkx,LbES1dldW5hQdVFm66Scx5" />
           <Link Id="Fu8F8YKy7cKMcTDFwfP5R9" Ids="HXqoVKww7koMvQFSHO15Jk,I0LxWcs8GHfPuG1iOo3c4f" IsFeedback="true" />
           <Link Id="L87fgyBgSTUQSjkl6p8nPa" Ids="HXqoVKww7koMvQFSHO15Jk,S0bKqqYlbNaPOSX1f1btSz" />
@@ -1795,7 +1794,6 @@
           <Link Id="HVcsdNvUI6vNLqd3JaJSVj" Ids="Ri880ax0sFtPGxKKTDd1wH,EDMnpMThjeJN7g5CxQ3Ggg" IsFeedback="true" />
           <Link Id="SkMBueAg7RDLWQ32FdY4Ek" Ids="ArhjJqTfsHuLbTtmRK1NvX,EDMnpMThjeJN7g5CxQ3Ggg" />
           <Link Id="CKHna8myBD3N7U9JgE0CDT" Ids="Ri880ax0sFtPGxKKTDd1wH,F5PMc8w1WMtQPEfe7zAWIg" />
-          <Link Id="MuLJuDiqzxoMkFoyr5rxqg" Ids="AKLeymbU00PQTxTtoar7XG,CbbA8LYJ0XJN2mtcR5shBv" />
           <Link Id="TxixlSQ5HvLN0onCwQHjWR" Ids="O7cGMveuU3YN08BlRso52h,LPxiUAMuca1OqCKvPjITq4" IsFeedback="true" />
           <Link Id="MbHO95oqaCSPhqq8XAfkN2" Ids="O7cGMveuU3YN08BlRso52h,GBQIsQjgsOJOtuU45TZvYg" />
           <Link Id="VcfCws73tIwLtIbFda3Vll" Ids="NgnSCaZIJGaQdVEWYagaeE,LPxiUAMuca1OqCKvPjITq4" />
@@ -1921,6 +1919,8 @@
           <Link Id="PW5CgIrHwMuPlPAykVL4R2" Ids="RcJLuKSlixtNCgXBLuqWtf,Roi62KJglQDNSod2pYFcFW" />
           <Link Id="TQ7LMuD0iFzO9OoWBbcULn" Ids="Roi62KJglQDNSod2pYFcFW,AL4a9CXuwCLOeKqQdzAZzF" />
           <Link Id="MIWvr7OirtBL5zU9tFXKX1" Ids="KffoUwPCvbfPgq5bwzkGys,OKRIM6pUMJ7Pd9roAJ1q9p" />
+          <Link Id="RL5UTUKbDA2NwLPFk2kN5j" Ids="BqIkiLYKOHSNrUeXUVCbDL,IxTkhy30MywO0EYmy3Ys1g" />
+          <Link Id="OzLGHlH9uxOL3CqUOMbzLJ" Ids="EU3346LPwhVO8tvs0R2zSi,CbbA8LYJ0XJN2mtcR5shBv" />
         </Patch>
       </Node>
       <!--
