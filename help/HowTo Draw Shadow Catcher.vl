@@ -423,7 +423,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="LFO" />
             </p:NodeReference>
-            <Pin Id="BcWrysdUOaUO6PGtKRQUFM" Name="Period" Kind="InputPin" DefaultValue="5" />
+            <Pin Id="BcWrysdUOaUO6PGtKRQUFM" Name="Period" Kind="InputPin" DefaultValue="3" />
             <Pin Id="IhalxmEc118PZWGeZOLQAl" Name="Pause" Kind="InputPin" />
             <Pin Id="V5VIk2io9uVPv556efZ8ZP" Name="Reset" Kind="ApplyPin" />
             <Pin Id="V4ccBy2M5zQPawfKoFMgJF" Name="Phase" Kind="OutputPin" />
@@ -809,7 +809,7 @@
             <Pin Id="LtCUiGFo8W4Ll8zjhc9Yh4" Name="Enabled" Kind="InputPin" />
             <Pin Id="KZcVH4ouoWBPVhPrDJb6p5" Name="Entity" Kind="OutputPin" />
           </Node>
-          <Pad Id="GmMXXKTfyeFOGqWS0CzQPS" Comment="Radius" Bounds="1824,375,35,15" ShowValueBox="true" isIOBox="true" Value="3.96">
+          <Pad Id="GmMXXKTfyeFOGqWS0CzQPS" Comment="Radius" Bounds="1824,375,35,15" ShowValueBox="true" isIOBox="true" Value="7.77">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -858,7 +858,7 @@
             </p:NodeReference>
             <Pin Id="DicVI6OwltmPDCDPqQXhIa" Name="Type" Kind="InputPin" />
             <Pin Id="DTJsGbaomqLPszB8HRJJmQ" Name="Filter" Kind="InputPin" />
-            <Pin Id="A62KOmaagmLLSOvvsobIZM" Name="Size" Kind="InputPin" DefaultValue="Medium" />
+            <Pin Id="A62KOmaagmLLSOvvsobIZM" Name="Size" Kind="InputPin" DefaultValue="Large" />
             <Pin Id="LR7ADY8gciZPK31azUwA3M" Name="Depth Bias" Kind="InputPin" DefaultValue="0.06" />
             <Pin Id="DZEvzSvDKVwOUJ2Un8uYTo" Name="Normal Offset Scale" Kind="InputPin" />
             <Pin Id="LisCjlb1hCZL8XCyunkazf" Name="Debug" Kind="InputPin" />
@@ -937,6 +937,11 @@
             <Pin Id="MxNYD5Elj53LNgn6tY4IIM" Name="Camera Component" Kind="OutputPin" />
           </Node>
           <Pad Id="PqQQ1hYQc0hMFZi0qBm48s" Comment="Initial Vertical Field Of View" Bounds="1102,675,35,15" ShowValueBox="true" isIOBox="true" Value="0.08">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="JnV6DG2SKeIPKMbwRsX2me" Comment="Speed" Bounds="1705,-184,35,15" ShowValueBox="true" isIOBox="true" Value="0.02">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -1030,8 +1035,6 @@
         <Link Id="JgYfMRpfN6KOxGGX3uVK9L" Ids="TmEdbqIW0LANqdR9NcN8ld,Ep0QeygiFpcLEzAJrDIJMM" />
         <Link Id="FOb7GoIAZu6LGo3D2Tl7Nq" Ids="RrRAdDz22dKNLSsmhyh9bn,HyImlYr6qKbQMqKccpMryz" />
         <Link Id="VPXGbgXuv45N3gT7jBQLnj" Ids="CiSzo3rBEDvLsUhobFdJdC,Nlg2TNakguINZZh0QyPDhz" />
-        <Link Id="Ri6YeKizSdzMTYiCfR8zTd" Ids="FShOj7xxBidPQYJrer47Mw,AnBH52qlQjPQPxTPbcz7Pb" />
-        <Link Id="UNcDqzRmuIePEQXwqhWYpt" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
         <Link Id="AA1jw0vU3ZGN4SztxxNSfS" Ids="JoMLB4R15RkMhdtxV0OwF2,R6OtK52h2NZOU1d13MENZJ" />
         <Link Id="MQxeKkRRRzgNWcnCTK5lcH" Ids="DYVkg2E1m5PPz46YFHiG9q,AkjdTSkYl6rNh4MziKiulg" />
         <Link Id="FT8LHtSLADjLB73ZwkqzfT" Ids="DYVkg2E1m5PPz46YFHiG9q,PAURjiLPcv3OmbRhBa1rwQ" />
@@ -1044,6 +1047,10 @@
         <Link Id="Mn4SC7s95mwMuyrmCvvt85" Ids="K5eLDg1nIgRNUnMXW8ttg9,SzgyG4cPbInO0O5h0yYLZG" />
         <Link Id="DyVM6Bct5TTMkvnU6aSNHT" Ids="Tkk8BL0XxElOe65hx2AMIM,ThIBJkHxQ5OPwnTTjcuEHP" />
         <Link Id="DpY67pUR6lWOkTBeo5XPrl" Ids="ElrGqxZMH8bL2PcdjdAHy0,QWMszTUznCvP7cf962J15I" />
+        <Link Id="ANImY2ZEZNHOraNTXhNF8o" Ids="JnV6DG2SKeIPKMbwRsX2me,QKMdHtSJwpnMrbqto9EdHs" />
+        <Link Id="UZLgZirqXOnM2rwcmgxjEy" Ids="JnV6DG2SKeIPKMbwRsX2me,LnW1sAM6qEwLOfdMhhIDof" />
+        <Link Id="QVKhvZKGBwbP3xPUVr3d1Q" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
+        <Link Id="McpQ5BLkN7bNFhMuA2wmOs" Ids="FShOj7xxBidPQYJrer47Mw,AnBH52qlQjPQPxTPbcz7Pb" />
       </Patch>
     </Node>
   </Patch>
