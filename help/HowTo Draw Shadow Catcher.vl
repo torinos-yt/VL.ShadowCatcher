@@ -206,7 +206,7 @@
             <Pin Id="MQAHncXX6YdLnS4DLN0paH" Name="Output" Kind="OutputPin" />
             <Pin Id="IdIaa1BS2txP1GGlB6S8nj" Name="Compositor" Kind="OutputPin" />
           </Node>
-          <Node Bounds="103,-124,117,19" Id="RSW9scpl7YhPHaSZGPrxXk">
+          <Node Bounds="-104,-379,117,19" Id="RSW9scpl7YhPHaSZGPrxXk">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="GetShadowParameters" />
@@ -267,7 +267,7 @@
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
           </Pad>
-          <Pad Id="UN5KnHNqTbXOOQsI8u8wIW" Comment="Range" Bounds="2239,34,35,15" ShowValueBox="true" isIOBox="true" Value="13.35">
+          <Pad Id="UN5KnHNqTbXOOQsI8u8wIW" Comment="Range" Bounds="2239,34,35,15" ShowValueBox="true" isIOBox="true" Value="14">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
@@ -481,7 +481,7 @@
             <Pin Id="EWoNMedmYrhLbZH8i2hXly" Name="Input" Kind="StateInputPin" />
             <Pin Id="MMC0lrjH9nHQMzkxFscg8x" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="168,338,86,19" Id="D5c4pRzixFKOOZJZc5EpRn">
+          <Node Bounds="168,338,105,19" Id="D5c4pRzixFKOOZJZc5EpRn">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -489,11 +489,12 @@
             <Pin Id="K1TGLovqAUOLLWNodWSxSg" Name="Transformation" Kind="InputPin" />
             <Pin Id="FHtCiVrz4exLyIIc8ARApX" Name="ShadowCatcher Data" Kind="InputPin" />
             <Pin Id="Tz9u9eVy4yGQIsuRLDUVKK" Name="Mesh" Kind="InputPin" />
+            <Pin Id="ByiKACIuIqnQDHd1EdN5wu" Name="Light Attenuation" Kind="InputPin" />
             <Pin Id="RgEQRE4gBtYOk9BqXkzdVl" Name="Shadow Color" Kind="InputPin" />
             <Pin Id="LD7KMb8gAHyMzkYP4uNBfC" Name="Enabled" Kind="InputPin" />
             <Pin Id="L5KCskD6y0AL4SUAnNtqtD" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="-15,329,86,19" Id="GqCMYssFWLrNuPDUrbUwZH">
+          <Node Bounds="-13,337,105,19" Id="GqCMYssFWLrNuPDUrbUwZH">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -501,6 +502,7 @@
             <Pin Id="BDZeBGGnaFJNFKYZZIl0TB" Name="Transformation" Kind="InputPin" />
             <Pin Id="BGiZXuRrW4nP4SbnZwYJg8" Name="ShadowCatcher Data" Kind="InputPin" />
             <Pin Id="QlvHA9CnNRnLefU7meFa2f" Name="Mesh" Kind="InputPin" />
+            <Pin Id="NYrKYBe6wjbLKDdjwnhciV" Name="Light Attenuation" Kind="InputPin" />
             <Pin Id="K23xhI6fieRONeH9VNVc07" Name="Shadow Color" Kind="InputPin" />
             <Pin Id="SVcRv4ndIFpQKdFuPkfaMH" Name="Enabled" Kind="InputPin" />
             <Pin Id="T0feYkj4NlvQUle455rx75" Name="Output" Kind="OutputPin" />
@@ -530,7 +532,7 @@
             <Pin Id="LEQUUgUdODDQXu0KGUrL3b" Name="Enabled" Kind="InputPin" DefaultValue="True" />
             <Pin Id="LAQmbCYrppPLAeOagCp3q3" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="615,-75,80,19" Id="TRv2YbLJf46OBRYQ4WgpvG">
+          <Node Bounds="722,-93,80,19" Id="TRv2YbLJf46OBRYQ4WgpvG">
             <p:NodeReference LastCategoryFullName="3D.Transform" LastDependency="VL.CoreLib.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <CategoryReference Kind="Category" Name="Transform" NeedsToBeDirectParent="true">
@@ -544,7 +546,7 @@
             <Pin Id="FjHpbreIvtmMP67eOCEcB9" Name="Translation" Kind="InputPin" />
             <Pin Id="MIGcwRcltQ6LP3CU2j4YY8" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="RCW5hgNu1qgNHmT8lguKwG" Comment="Translation" Bounds="716,-131,35,43" ShowValueBox="true" isIOBox="true" Value="0, 1.23, 3">
+          <Pad Id="RCW5hgNu1qgNHmT8lguKwG" Comment="Translation" Bounds="823,-149,35,43" ShowValueBox="true" isIOBox="true" Value="0, 1.23, 3">
             <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
@@ -565,7 +567,7 @@
             <Pin Id="QQEELVdBnDCNIr1Hwrkin6" Name="Enabled" Kind="InputPin" />
             <Pin Id="Tw2DIJETS1mNrmbLjvh3SF" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="BaXd59LhcpkMYkrQQ2JQ85" Comment="Scaling" Bounds="580,-197,35,43" ShowValueBox="true" isIOBox="true" Value="4, 4, 4">
+          <Pad Id="BaXd59LhcpkMYkrQQ2JQ85" Comment="Scaling" Bounds="687,-215,35,43" ShowValueBox="true" isIOBox="true" Value="4, 4, 4">
             <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
@@ -610,7 +612,7 @@
             </p:ValueBoxSettings>
           </Pad>
           <Pad Id="B18ey10dhvpQbQ729C43jX" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="959,828" />
-          <Pad Id="RsKsAgxVXvfLKgNBVV2nh7" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="104,-180" />
+          <Pad Id="RsKsAgxVXvfLKgNBVV2nh7" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="-103,-435" />
           <Pad Id="SQ7QoLAybgQMdh1epl7DwF" Bounds="984,751,444,87" ShowValueBox="true" isIOBox="true" Value="1. Use this project's own SceneWindow with added Compositor output to get the data needed for render Shadow Catcher and store it to the Pad.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -620,7 +622,7 @@
               <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="NIGZ628EnLdL7lxY3VwM5b" Bounds="147,-218,390,69" ShowValueBox="true" isIOBox="true" Value="2. Render ShadowCatcher using Compositor and GetShadowParameters.">
+          <Pad Id="NIGZ628EnLdL7lxY3VwM5b" Bounds="-60,-473,390,69" ShowValueBox="true" isIOBox="true" Value="2. Render ShadowCatcher using Compositor and GetShadowParameters.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -777,7 +779,7 @@
             <Pin Id="Tk56KqQzb6gOp2CwsVvZUS" Name="Count" Kind="InputPin" DefaultValue="2" />
             <Pin Id="TsgJYK3xnGMPq97YHywaO6" Name="Output" Kind="OutputPin" />
           </Node>
-          <Pad Id="OcQDa17QFn4Lry9UlDb5oG" Comment="Rotation" Bounds="649,-162,35,43" ShowValueBox="true" isIOBox="true" Value="0, -0.25, 0">
+          <Pad Id="OcQDa17QFn4Lry9UlDb5oG" Comment="Rotation" Bounds="756,-180,35,43" ShowValueBox="true" isIOBox="true" Value="0, -0.25, 0">
             <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector3" />
             </p:TypeAnnotation>
@@ -790,6 +792,65 @@
             <Pin Id="P4BRtNFyrHPMnxlhjiHhJC" Name="X" Kind="InputPin" />
             <Pin Id="K5eLDg1nIgRNUnMXW8ttg9" Name="Output" Kind="OutputPin" />
           </Node>
+          <Node Bounds="1740,425,185,19" Id="Bb1Lp2UvWp4M9H9nyhjaQP">
+            <p:NodeReference LastCategoryFullName="Stride.Lights" LastDependency="VL.Stride.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="PointLight" />
+            </p:NodeReference>
+            <Pin Id="NhO6yv4SPjJLtoz8cR2UEO" Name="Position" Kind="InputPin" />
+            <Pin Id="V3KO2M6fYmSLWapjaSslkU" Name="Color" Kind="InputPin" />
+            <Pin Id="GoWDeqGIzK2LSuKRM9DKVF" Name="Intensity" Kind="InputPin" />
+            <Pin Id="NgZOac95i8zPMWmqwVJeeb" Name="Radius" Kind="InputPin" />
+            <Pin Id="Ep0QeygiFpcLEzAJrDIJMM" Name="Shadow" Kind="InputPin" />
+            <Pin Id="RDUMobjyqinPWKBW4jcuhY" Name="Enable Default Shadow" Kind="InputPin" />
+            <Pin Id="GEXqI38ChQYM3uNqswsMDi" Name="Component" Kind="InputPin" />
+            <Pin Id="Buzn6ykB5ixM8EgHf7f8Fj" Name="Children" Kind="InputPin" />
+            <Pin Id="AexbtUAc1pjNrnHN7QzbFz" Name="Name" Kind="InputPin" />
+            <Pin Id="LtCUiGFo8W4Ll8zjhc9Yh4" Name="Enabled" Kind="InputPin" />
+            <Pin Id="KZcVH4ouoWBPVhPrDJb6p5" Name="Entity" Kind="OutputPin" />
+          </Node>
+          <Pad Id="GmMXXKTfyeFOGqWS0CzQPS" Comment="Radius" Bounds="1824,375,35,15" ShowValueBox="true" isIOBox="true" Value="12.67">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="LQap6NTpSLPLV8EUPNcXxc" Comment="Intensity" Bounds="1756,351,35,15" ShowValueBox="true" isIOBox="true" Value="7.26">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="EMSp6CMW1fjNyh8TxWtnsO" Comment="Position" Bounds="1662,355,35,43" ShowValueBox="true" isIOBox="true" Value="0.1, 2.26, 0.74">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Pad Id="VPs2IvuAoPKQDi46CVPXiA" Comment="Light Attenuation" Bounds="162,-308,35,35" ShowValueBox="true" isIOBox="true" Value="True">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="MXBAL3btUDdOGGWLYunh2Z" Bounds="209,-281,341,67" ShowValueBox="true" isIOBox="true" Value="Apply SpotLight and PointLight attenuation with distance and angle.">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
+          <Pad Id="JXEN6tFsiOPNso2cVGN4Wn" Bounds="209,-212,361,143" ShowValueBox="true" isIOBox="true" Value="However, when SpotLight and DirectionalLight are used together, artifacts will occur if Light Attenuation is disabled. This is due to the interference of adjacent ShadowMap Atlas">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">13</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="AAGnmTkDUlyLLCeemYexUS" Name="Create" />
         <Patch Id="Hed4moB1HBIPKEKGLFwLzt" Name="Update" />
@@ -847,8 +908,6 @@
         <Link Id="CwEqN99cH4JLQNNdZNBjgw" Ids="GdG4gDvAmAkPeylIJu0FkH,Nw2lhb4GddkOrZLTGMSwAi" />
         <Link Id="U2JncLAIjYJQdonjRpiYAx" Ids="GdG4gDvAmAkPeylIJu0FkH,R3pfAx3hMqiPkQI83e03Q3" />
         <Link Id="KEycvkg11LwOeBsAMR1rDt" Ids="L5KCskD6y0AL4SUAnNtqtD,EFCMZsaSOA8N2c4SY7qugG" />
-        <Link Id="HOnhKSHPqguLHEu15gWJxn" Ids="FShOj7xxBidPQYJrer47Mw,AnBH52qlQjPQPxTPbcz7Pb" />
-        <Link Id="HBsMVwsCRQ7Leb4xIoNNzi" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
         <Link Id="UQFaNKuGAvvOPkBQXs5Nv6" Ids="MMC0lrjH9nHQMzkxFscg8x,RBKyp2z3Xk9M0LtCIoNupc" />
         <Link Id="RrDd9lsBTRBNnedopemh3m" Ids="QBb1JCKrw43P4Y7BY1fLIx,I7BsqTSbylaQL4mynDsPnS" />
         <Link Id="KDSr3csVAOLM37y3BthF5m" Ids="MIGcwRcltQ6LP3CU2j4YY8,NtKp3CXaFXBOqWBXMhmbh3" />
@@ -878,6 +937,13 @@
         <Link Id="NILPTskFLFKPWObaa3tYPk" Ids="Nnd11E76FhbN07IrgFQEhr,P4BRtNFyrHPMnxlhjiHhJC" />
         <Link Id="HRsifuf5wqxNWQOPMMmEZq" Ids="K5eLDg1nIgRNUnMXW8ttg9,RhY6NtdVGSSNseQInEf1FS" />
         <Link Id="HPsi07Kaj26PQS0EpOQfa4" Ids="K5eLDg1nIgRNUnMXW8ttg9,SzgyG4cPbInO0O5h0yYLZG" />
+        <Link Id="AMm2i395sUTMtlcVrFAjcr" Ids="GmMXXKTfyeFOGqWS0CzQPS,NgZOac95i8zPMWmqwVJeeb" />
+        <Link Id="QboDAIPo7drQBHRogPwAbk" Ids="LQap6NTpSLPLV8EUPNcXxc,GoWDeqGIzK2LSuKRM9DKVF" />
+        <Link Id="MXVFB8PpwnwMyvH98KOQAl" Ids="EMSp6CMW1fjNyh8TxWtnsO,NhO6yv4SPjJLtoz8cR2UEO" />
+        <Link Id="UW8UdJmIPHaNspF4Xi0F5m" Ids="VPs2IvuAoPKQDi46CVPXiA,ByiKACIuIqnQDHd1EdN5wu" />
+        <Link Id="J2emhpLXyepPygfSDABNtZ" Ids="VPs2IvuAoPKQDi46CVPXiA,NYrKYBe6wjbLKDdjwnhciV" />
+        <Link Id="Cygg3vcWuXVO22G4nV8Ded" Ids="FShOj7xxBidPQYJrer47Mw,AnBH52qlQjPQPxTPbcz7Pb" />
+        <Link Id="TFCAt74FajyOUHIj0Wos4v" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
       </Patch>
     </Node>
   </Patch>

@@ -1,4 +1,4 @@
-﻿shader ShadowDraw_DrawFX : VS_PS_Base, ShadowCatcherDirectional, ShadowCatcherSpot
+﻿shader ShadowDraw_DrawFX : VS_PS_Base, ShadowCatcherDirectional, ShadowCatcherSpot, ShadowCatcherPointCubeMap
 {
     [Color]
     stage float4 ColorInput = float4(0, 0, 0, 1);
@@ -24,6 +24,11 @@
         for(int j = 0; j < DirectionalCount; j++)
         {
             shadow *= ComputeDirectionalShadow(streams.PositionWS.xyz, j).x;
+        }
+
+        for(int k = 0; k < PointLightCount; k++)
+        {
+            shadow *= ComputePointShadow(streams.PositionWS.xyz, k).x;
         }
 
         float4 c = (1-shadow).xxxx * ColorInput;

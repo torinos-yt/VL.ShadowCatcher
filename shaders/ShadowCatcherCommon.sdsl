@@ -10,6 +10,10 @@ shader ShadowCatcherCommon : Texturing, BufferUtils, PositionStream4, NormalStre
         StructuredBuffer<float4x4Struct> WorldToShadowCascadeUV;
         StructuredBuffer<float> DepthBiases;
         StructuredBuffer<float> OffsetScales;
+
+        StructuredBuffer<float3> LightPositions;
+        StructuredBuffer<float3> AttenParams; // AngleOffsetAndInvSquareRadius
+        StructuredBuffer<int> FilterSize;
     }
 
     cbuffer PerLighting
@@ -19,8 +23,11 @@ shader ShadowCatcherCommon : Texturing, BufferUtils, PositionStream4, NormalStre
 
         int DirectionalCount;
         int SpotLightCount;
+        int PointLightCount;
 
         int CascadeCount = 4;
+
+        int LightAttenuation;
     }
 
     float3 GetShadowPositionOffset(float offsetScale, float nDotL, float3 normal)

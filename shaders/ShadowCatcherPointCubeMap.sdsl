@@ -1,0 +1,81 @@
+﻿// Copyright (c) .NET Foundation and Contributors (https://dotnetfoundation.org/ & https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
+// Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+
+shader ShadowCatcherPointCubeMap : ShadowCatcherCommon
+{
+    rgroup PerLighting
+    {
+        StructuredBuffer<float2> DepthParameters;
+    }
+
+    float3 ComputePointShadow(float3 positionWS, int lightIndex)
+    {
+        // Calculate shadow:
+        float3 lightPosition = LightPositions[SpotLightCount + lightIndex];
+        float3 lightDelta = positionWS.xyz - lightPosition;
+        float distanceToLight = length(lightDelta);
+        float3 direction = lightDelta / distanceToLight;
+        float3 directionAbs = abs(direction);
+        
+        float longestAxis = max(directionAbs.x, max(directionAbs.y, directionAbs.z));
+
+        int faceIndex;
+        float lightSpaceZ;
+        
+        // Select the base face index for either X,Y or Z facing
+        [flatten]
+        if(directionAbs.x == longestAxis)
+        {
+            lightSpaceZ = lightDelta.x;
+            faceIndex = 2;
+        }
+        else if(directionAbs.y == longestAxis)
+        {
+            lightSpaceZ = lightDelta.y;
+            faceIndex = 4;
+        }
+        else // direction.z == longestAxis
+        {
+            lightSpaceZ = lightDelta.z;
+            faceIndex = 0;
+        }
+
+        // Apply offset for the negative side of a direction (+1)
+        float lightSpaceZDirection = sign(lightSpaceZ);
+        faceIndex += int(-min(0.0, lightSpaceZDirection));
+
+
+        int cascadeIndex = lightIndex * 6 + faceIndex;
+        int indexBase = DirectionalCount * CascadeCount + SpotLightCount;
+
+        // Apply normal scaled bias
+        positionWS += GetShadowPositionOffset(OffsetScales[indexBase + lightIndex], 0, streams.normalWS);
+
+        // Map to texture space
+        float4 projectedPosition = mul(float4(positionWS,1), WorldToShadowCascadeUV[indexBase + cascadeIndex].Matrix);
+        projectedPosition /= projectedPosition.w;
+
+        // Apply bias in view space
+        lightSpaceZ = abs(lightSpaceZ);
+        lightSpaceZ -= DepthBiases[indexBase + lightIndex];
+
+        // Project view space depth into the same space as the shadow map
+        float depth = DepthParameters[lightIndex].x + (DepthParameters[lightIndex].y / lightSpaceZ);
+
+        if(depth < 0 || depth > 1)
+            return 1;
+
+        // Compare distance to light to value inside of the shadow map
+        float shadow = FilterShadow(projectedPosition.xy, depth);
+
+        float3 lightVector = lightPosition - positionWS;
+        float lightVectorLength = length(lightVector);
+
+        float atten = GetDistanceAttenuation(lightVectorLength, AttenParams[SpotLightCount + lightIndex].z);
+        
+        if(LightAttenuation)
+            return(shadow * saturate(atten*10));
+        else
+            return shadow;
+    }
+};

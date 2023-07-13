@@ -5,8 +5,6 @@ shader ShadowCatcherSpot : ShadowCatcherCommon
 {
     rgroup PerLighting
     {
-        StructuredBuffer<float3> SpotParams; // AngleOffsetAndInvSquareRadius
-        StructuredBuffer<float3> SpotPositions;
         StructuredBuffer<float3> SpotDirections;
     }
 
@@ -20,11 +18,14 @@ shader ShadowCatcherSpot : ShadowCatcherCommon
         
         float3 lightVectorNorm = (float3)0;
         float atten = ComputeAttenuation(position,
-                                        SpotParams[lightIndex],
+                                        AttenParams[lightIndex],
                                         -SpotDirections[lightIndex],
-                                        SpotPositions[lightIndex],
+                                        LightPositions[lightIndex],
                                         lightVectorNorm);
 
-        return shadow * saturate((atten*25));
+        if(LightAttenuation)
+            return shadow * saturate((atten*25));
+        else
+            return shadow;
     }
 };
