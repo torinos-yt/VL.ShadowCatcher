@@ -3,11 +3,13 @@
     [Color]
     stage float4 ColorInput = float4(0, 0, 0, 1);
 
+    stage float NormalOffset = 0;
+
     override stage void VSMain()
     {
         streams.PositionWS = mul(streams.Position, World);
         streams.normalWS = mul(streams.meshNormal, (float3x3)WorldInverseTranspose);
-        streams.ShadingPosition = mul(streams.Position, WorldViewProjection);
+        streams.ShadingPosition = mul(streams.Position + float4(streams.meshNormal * NormalOffset, 0), WorldViewProjection);
     }
 
     override stage void PSMain()

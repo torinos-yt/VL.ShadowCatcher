@@ -172,7 +172,7 @@
             <Pin Id="Uy43DQ56aUPQVW90JUIvqT" Name="Component" Kind="InputPin" />
             <Pin Id="Cv0kgx2PFF1Mpf4D9IWbMe" Name="Children" Kind="InputPin" />
             <Pin Id="HqHSDg74SaFPzlEJah5PMM" Name="Name" Kind="InputPin" />
-            <Pin Id="FiON4GrY8K2MQmbQjg6Tre" Name="Enabled" Kind="InputPin" />
+            <Pin Id="FiON4GrY8K2MQmbQjg6Tre" Name="Enabled" Kind="InputPin" DefaultValue="True" />
             <Pin Id="KWl4PnLXW16O5gx4D0Agdg" Name="Entity" Kind="OutputPin" />
           </Node>
           <Pad Id="BsheFODXVxaNVDkv1OtmXA" Comment="Range" Bounds="2083,-79,35,15" ShowValueBox="true" isIOBox="true" Value="11.18">
@@ -214,7 +214,7 @@
             <Pin Id="NlU7pAgueSrM95eKDugVxF" Name="Input" Kind="InputPin" />
             <Pin Id="E8KlpJ3PG4LOx82vPlPosy" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="224,296,125,19" Id="Mv9EPSJg5V4PrrGMkWY4GC">
+          <Node Bounds="244,299,125,19" Id="Mv9EPSJg5V4PrrGMkWY4GC">
             <p:NodeReference LastCategoryFullName="Stride.Models.Meshes" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessNode" Name="PlaneMesh" />
@@ -481,7 +481,7 @@
             <Pin Id="EWoNMedmYrhLbZH8i2hXly" Name="Input" Kind="StateInputPin" />
             <Pin Id="MMC0lrjH9nHQMzkxFscg8x" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="190,340,105,19" Id="D5c4pRzixFKOOZJZc5EpRn">
+          <Node Bounds="210,343,105,19" Id="D5c4pRzixFKOOZJZc5EpRn">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -494,7 +494,7 @@
             <Pin Id="ED9KyHuvqOxQX3WhmvRzHD" Name="Enabled" Kind="InputPin" />
             <Pin Id="L5KCskD6y0AL4SUAnNtqtD" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="-12,340,105,19" Id="GqCMYssFWLrNuPDUrbUwZH">
+          <Node Bounds="-12,340,125,19" Id="GqCMYssFWLrNuPDUrbUwZH">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -504,6 +504,7 @@
             <Pin Id="QlvHA9CnNRnLefU7meFa2f" Name="Mesh" Kind="InputPin" />
             <Pin Id="NYrKYBe6wjbLKDdjwnhciV" Name="Light Attenuation" Kind="InputPin" />
             <Pin Id="K23xhI6fieRONeH9VNVc07" Name="Shadow Color" Kind="InputPin" />
+            <Pin Id="Tk7l4urU0G7PlVwgyLXg29" Name="Normal Offset" Kind="InputPin" />
             <Pin Id="R4DwocibzfwM3gblCdr0ie" Name="Enabled" Kind="InputPin" />
             <Pin Id="T0feYkj4NlvQUle455rx75" Name="Output" Kind="OutputPin" />
           </Node>
@@ -570,11 +571,6 @@
           <Pad Id="BaXd59LhcpkMYkrQQ2JQ85" Comment="Scaling" Bounds="687,-215,35,43" ShowValueBox="true" isIOBox="true" Value="2.96, 2.96, 2.96">
             <p:TypeAnnotation LastCategoryFullName="3D" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="Vector3" />
-            </p:TypeAnnotation>
-          </Pad>
-          <Pad Id="NjfDvkXMsshO8fdeJfbwAj" Comment="Size" Bounds="30,221,35,15" ShowValueBox="true" isIOBox="true" Value="1.01">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
           </Pad>
           <Pad Id="GdG4gDvAmAkPeylIJu0FkH" Comment="Walk" Bounds="1785,-139,35,35" ShowValueBox="true" isIOBox="true" Value="True">
@@ -915,6 +911,15 @@
               <Choice Kind="TypeFlag" Name="Float32" />
             </p:TypeAnnotation>
           </Pad>
+          <Pad Id="HKL3bTUWa3lP5BXMkCa6sX" Comment="Normal Offset" Bounds="81,304,45,15" ShowValueBox="true" isIOBox="true" Value="0.001">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="Float32" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:precision p:Type="Int32">4</p:precision>
+              <p:stepsize p:Type="Single">0.01</p:stepsize>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="AAGnmTkDUlyLLCeemYexUS" Name="Create" />
         <Patch Id="Hed4moB1HBIPKEKGLFwLzt" Name="Update" />
@@ -966,7 +971,6 @@
         <Link Id="Vq6nh2nfJjuL9PNK0jMeeN" Ids="MIGcwRcltQ6LP3CU2j4YY8,BDZeBGGnaFJNFKYZZIl0TB" />
         <Link Id="DMsyoydr2d5QUGgVLzDWWu" Ids="RCW5hgNu1qgNHmT8lguKwG,FjHpbreIvtmMP67eOCEcB9" />
         <Link Id="Pwc3UYbgejjLREpvyKRDlD" Ids="BaXd59LhcpkMYkrQQ2JQ85,HO2wcgBoIJxLMlYAWYRDms" />
-        <Link Id="H3LlXb0WKXWQcvf5c3CbGa" Ids="NjfDvkXMsshO8fdeJfbwAj,C8fdWLDJMCPQbB0JmY6SBp" />
         <Link Id="CwEqN99cH4JLQNNdZNBjgw" Ids="GdG4gDvAmAkPeylIJu0FkH,Nw2lhb4GddkOrZLTGMSwAi" />
         <Link Id="U2JncLAIjYJQdonjRpiYAx" Ids="GdG4gDvAmAkPeylIJu0FkH,R3pfAx3hMqiPkQI83e03Q3" />
         <Link Id="KEycvkg11LwOeBsAMR1rDt" Ids="L5KCskD6y0AL4SUAnNtqtD,EFCMZsaSOA8N2c4SY7qugG" />
@@ -1018,6 +1022,7 @@
         <Link Id="UZLgZirqXOnM2rwcmgxjEy" Ids="JnV6DG2SKeIPKMbwRsX2me,LnW1sAM6qEwLOfdMhhIDof" />
         <Link Id="QVKhvZKGBwbP3xPUVr3d1Q" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
         <Link Id="McpQ5BLkN7bNFhMuA2wmOs" Ids="FShOj7xxBidPQYJrer47Mw,AnBH52qlQjPQPxTPbcz7Pb" />
+        <Link Id="ECm818oeIDdPlfdj3DCdi3" Ids="HKL3bTUWa3lP5BXMkCa6sX,Tk7l4urU0G7PlVwgyLXg29" />
       </Patch>
     </Node>
   </Patch>
