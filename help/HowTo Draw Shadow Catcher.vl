@@ -186,12 +186,11 @@
             </p:TypeAnnotation>
           </Pad>
           <Node Bounds="737,766,225,19" Id="AOZEedSsx1TPgnX9mfAhJ4">
-            <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
+            <p:NodeReference LastCategoryFullName="Stride" LastDependency="VL.Stride.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="Category" Name="ShadowCatcher" NeedsToBeDirectParent="true" />
               <Choice Kind="ProcessAppFlag" Name="SceneWindow" />
             </p:NodeReference>
-            <Pin Id="EuFomNxZOHwMkn8ARy01wj" Name="Bounds" Kind="InputPin" DefaultValue="2944.6667, 154.66667, 822, 932.6667" />
+            <Pin Id="EuFomNxZOHwMkn8ARy01wj" Name="Bounds" Kind="InputPin" DefaultValue="2483.3333, 294, 786, 432" />
             <Pin Id="TRUphtXCHCwPn2p8Huccrz" Name="Input" Kind="InputPin" />
             <Pin Id="EOnh7I5nsQmLDLdytraRBl" Name="Camera" Kind="InputPin" />
             <Pin Id="GZ4JQQ3REgRPScpU6UD4LZ" Name="Enable Default Camera" Kind="InputPin" />
@@ -204,7 +203,8 @@
             <Pin Id="SMJtegPfKZbNy9HHeF7hnJ" Name="Enabled" Kind="InputPin" />
             <Pin Id="JoMgbgMn0E6Oyx7OqFIJZY" Name="Present Interval" Kind="InputPin" DefaultValue="Default" />
             <Pin Id="MQAHncXX6YdLnS4DLN0paH" Name="Output" Kind="OutputPin" />
-            <Pin Id="IdIaa1BS2txP1GGlB6S8nj" Name="Compositor" Kind="OutputPin" />
+            <Pin Id="TeSeQVUTqXJLhWxoAeuVcC" Name="Client Bounds" Kind="OutputPin" />
+            <Pin Id="O0ZMOCWDwc6LC3suim6hg1" Name="Input Source" Kind="OutputPin" />
           </Node>
           <Node Bounds="244,299,125,19" Id="Mv9EPSJg5V4PrrGMkWY4GC">
             <p:NodeReference LastCategoryFullName="Stride.Models.Meshes" LastDependency="VL.Stride.vl">
@@ -473,7 +473,7 @@
             <Pin Id="EWoNMedmYrhLbZH8i2hXly" Name="Input" Kind="StateInputPin" />
             <Pin Id="MMC0lrjH9nHQMzkxFscg8x" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="210,343,125,19" Id="D5c4pRzixFKOOZJZc5EpRn">
+          <Node Bounds="210,343,86,19" Id="D5c4pRzixFKOOZJZc5EpRn">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -482,11 +482,10 @@
             <Pin Id="Tz9u9eVy4yGQIsuRLDUVKK" Name="Mesh" Kind="InputPin" />
             <Pin Id="ByiKACIuIqnQDHd1EdN5wu" Name="Light Attenuation" Kind="InputPin" />
             <Pin Id="RgEQRE4gBtYOk9BqXkzdVl" Name="Shadow Tint" Kind="InputPin" />
-            <Pin Id="McEyZObtYyKPbnu8wsjGNY" Name="Compositor" Kind="InputPin" />
             <Pin Id="ED9KyHuvqOxQX3WhmvRzHD" Name="Enabled" Kind="InputPin" />
             <Pin Id="L5KCskD6y0AL4SUAnNtqtD" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="-12,340,145,19" Id="GqCMYssFWLrNuPDUrbUwZH">
+          <Node Bounds="-12,340,105,19" Id="GqCMYssFWLrNuPDUrbUwZH">
             <p:NodeReference LastCategoryFullName="ShadowCatcher" LastDependency="VL.ShadowCatcher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="ShadowCatcher" />
@@ -496,7 +495,6 @@
             <Pin Id="NYrKYBe6wjbLKDdjwnhciV" Name="Light Attenuation" Kind="InputPin" />
             <Pin Id="K23xhI6fieRONeH9VNVc07" Name="Shadow Tint" Kind="InputPin" />
             <Pin Id="Tk7l4urU0G7PlVwgyLXg29" Name="Normal Offset" Kind="InputPin" />
-            <Pin Id="HeYZpCXn3PNLdmPnEY1wCe" Name="Compositor" Kind="InputPin" />
             <Pin Id="R4DwocibzfwM3gblCdr0ie" Name="Enabled" Kind="InputPin" />
             <Pin Id="T0feYkj4NlvQUle455rx75" Name="Output" Kind="OutputPin" />
           </Node>
@@ -600,17 +598,6 @@
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
             </p:ValueBoxSettings>
           </Pad>
-          <Pad Id="B18ey10dhvpQbQ729C43jX" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="959,828" />
-          <Pad Id="RsKsAgxVXvfLKgNBVV2nh7" SlotId="PTSVhPTdBp0Mh8G2gktRvt" Bounds="485,277" />
-          <Pad Id="SQ7QoLAybgQMdh1epl7DwF" Bounds="984,751,447,114" ShowValueBox="true" isIOBox="true" Value="1. Use this project's own SceneWindow (or yours!) with added Compositor output to get the data needed for render Shadow Catcher and store it to the Pad.">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">13</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-            </p:ValueBoxSettings>
-          </Pad>
           <Pad Id="NIGZ628EnLdL7lxY3VwM5b" Bounds="-60,-473,390,69" ShowValueBox="true" isIOBox="true" Value="2. Render ShadowCatcher using Compositor and GetShadowParameters.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
@@ -637,15 +624,6 @@
             </p:ValueBoxSettings>
           </Pad>
           <Pad Id="ViAvH5PGswYNq8O6ijji2K" Bounds="-488,186,390,69" ShowValueBox="true" isIOBox="true" Value="Only direct shadows from shadow mapping are rendered here.">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">13</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Pad Id="FanqzeQg0aqM3ohA012Dif" Bounds="-486,271,389,137" ShowValueBox="true" isIOBox="true" Value="As a known issue, ShadowCatcher renders the result with a 1 frame delay because the shadow data is retrieved in vvvv's Update operation.">
             <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
               <Choice Kind="TypeFlag" Name="String" />
             </p:TypeAnnotation>
@@ -967,8 +945,6 @@
         <Link Id="KDSr3csVAOLM37y3BthF5m" Ids="MIGcwRcltQ6LP3CU2j4YY8,NtKp3CXaFXBOqWBXMhmbh3" />
         <Link Id="VEWYeXZAIQfL7WX0SH1HbD" Ids="FPT8NPoN8UCL2gHnVc26nW,TRUphtXCHCwPn2p8Huccrz" />
         <Link Id="ISC86bNTnJsOiXR9PrTWzr" Ids="PZfvY0sm90uPsjhGJzBtFR,AEIFlF0DlvFQMaafGF8QMQ" />
-        <Slot Id="PTSVhPTdBp0Mh8G2gktRvt" Name="Compositor" />
-        <Link Id="QvcKjcgmrz2PjxT2OW2zKC" Ids="IdIaa1BS2txP1GGlB6S8nj,B18ey10dhvpQbQ729C43jX" />
         <Link Id="R7HV8a8AznGL5X05FH8Ph6" Ids="Tw2DIJETS1mNrmbLjvh3SF,Tf1QRPqsROEQZN95tDc5fO" />
         <Link Id="T0mJCGXPQcBPO4jfipGyS7" Ids="HXYxhms6g5NLb7arQhYgAs,RgEQRE4gBtYOk9BqXkzdVl" />
         <Link Id="PUH8OTcezCJK93GiMQOaNY" Ids="T0feYkj4NlvQUle455rx75,EugrrTPzkzfQLgqxOmjfaK" />
@@ -1013,8 +989,6 @@
         <Link Id="RWbyh0RKuU2NH3ujOuzt7d" Ids="KWl4PnLXW16O5gx4D0Agdg,RNOMzbEh39UMSskBZy5qBH" />
         <Link Id="Mx3iyVqL6yeMydMCJ5eVFZ" Ids="ElrGqxZMH8bL2PcdjdAHy0,QWMszTUznCvP7cf962J15I" />
         <Link Id="Fw2wvqSGt2INgDimM4Cx74" Ids="Tkk8BL0XxElOe65hx2AMIM,ThIBJkHxQ5OPwnTTjcuEHP" />
-        <Link Id="PlTJjlBKHDLQb9Ey6XnGuS" Ids="RsKsAgxVXvfLKgNBVV2nh7,HeYZpCXn3PNLdmPnEY1wCe" />
-        <Link Id="TbIvGEuqSH7PTcg0JljCzE" Ids="RsKsAgxVXvfLKgNBVV2nh7,McEyZObtYyKPbnu8wsjGNY" />
       </Patch>
     </Node>
   </Patch>
