@@ -1,9 +1,18 @@
 ﻿shader ShadowDraw_DrawFX : VS_PS_Base, ShadowCatcherDirectional, ShadowCatcherSpot, ShadowCatcherPointCubeMap
 {
     [Color]
-    stage float4 ColorInput = float4(0, 0, 0, 1);
+    stage float4 ShadowTint = float4(0, 0, 0, 1);
+
+    [Color]
+    stage float4 OtherTint = float4(0, 0, 0, 0);
 
     stage float NormalOffset = 0;
+
+    rgroup PerMaterial
+    {
+        stage Texture2D ShadowTexture;
+        stage Texture2D OtherTexture;
+    }
 
     override stage void VSMain()
     {
@@ -15,6 +24,9 @@
     override stage void PSMain()
     {
         streams.DepthVS = -mul(streams.PositionWS, View).z;
+
+        float4 shadowCol = ShadowTexture.Sample(LinearSampler, streams.TexCoord) * ShadowTint;
+        float4 otherCol = ShadowTexture.Sample(LinearSampler, streams.TexCoord) * OtherTint;
 
         float shadow = 1;
 
@@ -33,9 +45,7 @@
             shadow *= ComputePointShadow(streams.PositionWS.xyz, k).x;
         }
 
-        float4 c = (1-shadow).xxxx * ColorInput;
-
-        streams.ColorTarget = c;
+        streams.ColorTarget = lerp(otherCol, shadowCol, 1 - shadow);
     }
 
 };
