@@ -190,7 +190,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="SceneWindow" />
             </p:NodeReference>
-            <Pin Id="EuFomNxZOHwMkn8ARy01wj" Name="Bounds" Kind="InputPin" DefaultValue="1388, 105.333336, 786, 432" />
+            <Pin Id="EuFomNxZOHwMkn8ARy01wj" Name="Bounds" Kind="InputPin" DefaultValue="1041, 85, 786, 931" />
             <Pin Id="TRUphtXCHCwPn2p8Huccrz" Name="Input" Kind="InputPin" />
             <Pin Id="EOnh7I5nsQmLDLdytraRBl" Name="Camera" Kind="InputPin" />
             <Pin Id="GZ4JQQ3REgRPScpU6UD4LZ" Name="Enable Default Camera" Kind="InputPin" />
@@ -596,15 +596,6 @@
             </p:TypeAnnotation>
             <p:ValueBoxSettings>
               <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
-            </p:ValueBoxSettings>
-          </Pad>
-          <Pad Id="NIGZ628EnLdL7lxY3VwM5b" Bounds="441,84,390,69" ShowValueBox="true" isIOBox="true" Value="2. Render ShadowCatcher using Compositor and GetShadowParameters.">
-            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
-              <Choice Kind="TypeFlag" Name="String" />
-            </p:TypeAnnotation>
-            <p:ValueBoxSettings>
-              <p:fontsize p:Type="Int32">13</p:fontsize>
-              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
             </p:ValueBoxSettings>
           </Pad>
           <Overlay Id="B1vQLw8roSnLPjuPAsxOoP" Name="Shadow Catcher" Bounds="434,519,584,530">
